@@ -1,57 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Survey Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <!-- CHANGE CSS NAME!! -->
+    <link rel="stylesheet" href="survey-styles.css">
+    <script src="https://kit.fontawesome.com/8f3d1a8983.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1 id="title">Survey Form</h1>
-    <p id="description">Description of this survey form is left to the imagination</p>
-    <form id="survey-form">
-        <div class="name form-group">
-            <label for="name" id="name-label" class="top-inputs">Name</label>
-            <input type="text" id="name" required placeholder="Enter your name here">
-        </div>
-        <div class="email form-group">
-            <label for="email" id="email-label" class="top-inputs">Email</label>
-            <input type="email" id="email" required placeholder="Enter your email here">
-        </div>
-        <div class="age form-group">
-            <label for="number" id="number-label" class="top-inputs">Age (optional)</label>
-            <input type="number" id="number" min="13" max="150" placeholder="Age">
-        </div>
-        <div class="dropdown form-group">
-            <p>Which option would you pick?</p>
-            <select name="dropdown" id="dropdown">
-                <option value="">(select one)</option>
-                <option value="1">this one</option>
-                <option value="2">actually, this one</option>
-                <option value="3">nvm, this is it</option>
-                <option value="4">last ftw</option>
-            </select>
-        </div>
-        <div class="radio-buttons form-group">
-            <label for="radio-one"><input type="radio" name="radios" id="radio-one" value="1"> first thing</label>
-            <label for="radio-two"><input type="radio" name="radios" id="radio-two" value="2"> second thing</label>
-        </div>
-        <div class="checkboxes form-group">
-            <label for="check-one"><input type="checkbox" name="checks" id="check-one" value="1">yeet</label>
-            <label for="check-two"><input type="checkbox" name="checks" id="check-two" value="2">yeet again</label>
-            <label for="check-three"><input type="checkbox" name="checks" id="check-three" value="3">yeetest</label>
-        </div>
-        <div class="form-group">
-            <label for="comment-box">Comments</label>
-            <textarea name="comment-box" id="comment-box" cols="30" rows="10" placeholder="yeet"></textarea>
-        </div>
-        <div class="form-group">
-            <button type="submit" id="submit" class="submit-button">Submit</button>
-        </div>
-    </form>
+    <!-- header, navbar -->
+    <header id="header">
+        <nav id="navbar">
+            <a class="nav-link" href="index.html#welcome-section">Welcome</a>
+            <a class="nav-link" href="index.html#projects">My Projects</a>
+            <a class="nav-link" href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- main body -->
+    <main>
+
+        <!-- form zone -->
+        <form id="survey-form">
+            <h1 id="title">Survey Form</h1>
+            <p id="description">This survey form is being used to gather information about potatoes.</p>
+            
+
+            <!-- demos -->
+            <div class="demographic-info">
+                <div class="name form-group">
+                    <label for="name" id="name-label" class="top-inputs">Name:</label>
+                    <input type="text" id="name" required placeholder="Enter your name here" minlength="3">
+                </div>
+                <div id="email-section" class="form-group">
+                    <label for="email" id="email-label" class="top-inputs">Email:</label>
+                    <input type="email" name="email" id="email" required placeholder="Enter your email here">
+                </div>
+                <div id="age-section" class="form-group">
+                    <label for="number" id="number-label" class="top-inputs">Age (optional)</label>
+                    <input type="number" id="number" min="13" max="150" placeholder="Age">
+                </div>
+            </div>
+
+            <!-- various inputs -->
+            <div id="dropdown-section" class="form-group">
+                <h2 class="input-header">Which potato is your favorite?</h2>
+                <select name="dropdown" id="dropdown">
+                    <option value="">(select one)</option>
+                    <option value="1">Russet</option>
+                    <option value="2">Yukon Gold</option>
+                    <option value="3">Red</option>
+                    <option value="4">Sweet</option>
+                </select>
+            </div>
+
+            <div id="radio-section" class="form-group">
+                <h2 class="input-header">How do you prepare your potatoes?</h2>
+                <label for="radio-one"><input type="radio" name="radios" id="radio-one" value="1"> Mashed</label>
+                <label for="radio-two"><input type="radio" name="radios" id="radio-two" value="2"> Roasted</label>
+            </div>
+
+            <fieldset id="check-section" class="form-group">
+                <legend class="input-header">What do you put on your potatoes?</legend>
+                <label for="check-one"><input type="checkbox" name="checks" id="check-one" value="1">Butter</label>
+                <label for="check-two"><input type="checkbox" name="checks" id="check-two" value="2">Gravy</label>
+                <label for="check-three"><input type="checkbox" name="checks" id="check-three" value="3">Nothing/Plain</label>
+            </fieldset>
+
+            <div id="comment-section" class="form-group">
+                <label for="comment-box"><h2 class="input-header">Got a potato recipe? Share it here:</h2></label>
+                <br>
+                <textarea name="comment-box" id="comment-box" cols="50" rows="10" placeholder="enter text here"></textarea>
+            </div>
+
+            <div id="sumit-zone" class="form-group">
+                <button type="submit" id="submit" class="submit-button">Submit</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>I agree, there should be some sort of text here. <br>
+        Maybe a link of sorts?</p>
+    </footer>
 </body>
 
 </html>
